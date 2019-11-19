@@ -1,12 +1,16 @@
 body {
     font-family: 'Fira Code', monospace;
-    font-size: 4em;
     background-color: #002b36;
     margin-left: 10%;
 }
 
+h1 {
+    font-size: 10vw;
+    color: #eee8d5;
+}
+
 h2 {
-    font-size: 1em;
+    font-size: 4vw;
     color: #839496;
 }
 
@@ -35,10 +39,8 @@ h2 {
     --animation-duration: var(--duration, 800ms);
     --animation-iterations: var(--iterations, 1);
     position: relative;
-    font-size: 10vw;
     -webkit-animation-name: clip-text;
     animation-name: clip-text;
-    color: #eee8d5;
     white-space: nowrap;
     cursor: default;
 }
