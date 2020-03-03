@@ -26,11 +26,13 @@ function execute() {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
                 var uploadDate = JSON.parse(response.body).items[0].snippet.publishedAt
+                var lastVideo = JSON.parse(response.body).items[0].id.videoId
                 var parsed = Date.parse(uploadDate)
                 var now = Date.now()
                 var difference = now - parsed
                 var days = String(Math.round(difference / 1000 / 60 / 60 / 24) + " Days")
                 document.getElementById("date").innerHTML = days
+                document.getElementById("video").innerHTML = `<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/${lastVideo}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>`
             },
             function(err) {
                 console.error("Execute error", err);
